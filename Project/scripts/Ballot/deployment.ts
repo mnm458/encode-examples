@@ -14,10 +14,10 @@ function convertStringArrayToBytes32(array: string[]){
 }
 
 async function main(){
- const wallet = process.env.MNEMONIC && process.env.MNEMONIC.length > 0
-  ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
-  : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
-
+  const wallet = process.env.MNEMONIC && process.env.MNEMONIC.length > 0
+    ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
+    : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
+  console.log({wallet})
 }
 
 main().catch((error) => {
