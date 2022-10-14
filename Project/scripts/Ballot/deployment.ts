@@ -18,7 +18,7 @@ async function main(){
     ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
     : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
   console.log(`Using address ${wallet.address}`)
-  const
+  const provider = ethers.providers.getDefaultProvider("ropsten")
 }
 
 main().catch((error) => {
