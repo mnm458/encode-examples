@@ -31,6 +31,9 @@ async function main(){
     ballotJson.bytecode,
     signer
   );
+  const ballotContract = await ballotFactory.deploy(
+    convertStringArrayToBytes32(proposals)
+  );
 }
 
 main().catch((error) => {
