@@ -27,13 +27,13 @@ describe("Testing ERC20 Token", () => {
     });
 
     describe("when the minter call the mint function", async () => {
-      beforeEach(async () => {
-        const mintTx = await tokenContract.mint(
-          accounts[1].address,
-          TEST_MINT_VALUE
-        );
-        await mintTx.wait();
-      });
+    //   beforeEach(async () => {
+    //     const mintTx = await tokenContract.mint(
+    //       accounts[1].address,
+    //       TEST_MINT_VALUE
+    //     );
+    //     await mintTx.wait();
+    //   });
 
       it("updates the total supply", async () => {
         const totalSupplyBN = await tokenContract.totalSupply();
