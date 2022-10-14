@@ -1,6 +1,7 @@
 import {ContractFactory, ethers} from "ethers";
 import "dotenv/config";
 import * as ballotJson from "../../artifacts/contracts/Ballot.sol/Ballot.json"
+import { parseEther } from "ethers/lib/utils";
 const EXPOSED_KEY = "8da4ef21b864d2cc526dbdb2a120bd2874c36c9d0a1fb7f8c63d7f7a8b41de8f";
 
 const PROPOSALS = ["Proposal 1", "Proposal 2", "Proposal 3"];
@@ -18,10 +19,11 @@ async function main(){
     ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
     : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
   console.log(`Using address ${wallet.address}`)
-  const provider = ethers.providers.getDefaultProvider("ropsten");
+  const provider = ethers.providers.getDefaultProvider("goerli");
 
   const signer = wallet.connect(provider);
-  const balance = await signer.getBalance();
+  const balanceBN = await signer.getBalance();
+  balance = parseEther(balance);
   console.log(`Wallet balance: ${balance}`);
 }
 
