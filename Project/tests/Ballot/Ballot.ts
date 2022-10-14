@@ -79,8 +79,12 @@ describe("Ballot", function () {
 
   describe("when the voter interact with the vote function in the contract", function (){
     //TODO
-    it("is not emplemented", async function(){
+    it("should not be able to vote when they have no weight", async function(){
+      const voter = await ballotContract.voters(accounts[1].address);
+      expect(voter.weight).to.eq(0);
+      await expect( ballotContract.connect(accounts[1]).vote(2)).to.be.revertedWith("Has no right to vote");
       
+
     })
   })
 
