@@ -71,7 +71,9 @@ describe("Ballot", function () {
     it("cannot give right to vote for someone that has voted", async function(){
       const tx = await ballotContract.giveRightToVote(accounts[1].address);
       await tx.wait();
-      
+      const voteTx = await ballotContract.connect(accounts[1]).vote(2);
+      await voteTx.wait();
+      await expect(ballotContract.giveRightToVote(accounts[1].address)).to.be.revertedWith("The voter already voted")
     })
   })
 
