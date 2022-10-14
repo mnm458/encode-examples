@@ -22,7 +22,7 @@ async function main(){
 
   const signer = wallet.connect(provider);
   const balance = await signer.getBalance();
-  console.log(`Wallet balance: `)
+  console.log(`Wallet balance: ${balance}`);
 }
 
 main().catch((error) => {
