@@ -35,6 +35,8 @@ async function main(){
     convertStringArrayToBytes32(PROPOSALS)
   );
   await ballotContract.deployed();
+  console.log("Contract deployted");
+  console.log(`Contract at address:${ballotContract.address}`)
 }
 
 main().catch((error) => {
