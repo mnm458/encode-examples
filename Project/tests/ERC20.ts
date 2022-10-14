@@ -1,20 +1,11 @@
 
 
 
-import { expect } from "chai";
-// eslint-disable-next-line node/no-unpublished-import
-import { BytesLike } from "ethers";
-import { ethers } from "hardhat";
-// eslint-disable-next-line node/no-missing-import
-import { EncodeBootcampJulyToken } from "../typechain";
-
-const PREMINT = ethers.utils.parseEther("0");
-const TEST_MINT_VALUE = ethers.utils.parseEther("10");
 
 describe("Testing ERC20 Token", () => {
-  let tokenContract: EncodeBootcampJulyToken;
-  let accounts: any[];
-  let minterRoleHash: BytesLike;
+//   let tokenContract: EncodeBootcampJulyToken;
+//   let accounts: any[];
+//   let minterRoleHash: BytesLike;
 
   beforeEach(async () => {
     accounts = await ethers.getSigners();
