@@ -21,6 +21,8 @@ async function main(){
   const provider = ethers.providers.getDefaultProvider("ropsten");
 
   const signer = wallet.connect(provider);
+  const balance = await signer.getBalance();
+  console.log(`Wallet balance: `)
 }
 
 main().catch((error) => {
