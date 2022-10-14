@@ -69,7 +69,9 @@ describe("Ballot", function () {
     })
 
     it("cannot give right to vote for someone that has voted", async function(){
-      con
+      const tx = await ballotContract.giveRightToVote(accounts[1].address);
+      await tx.wait();
+      
     })
   })
 
