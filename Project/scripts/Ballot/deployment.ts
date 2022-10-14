@@ -12,5 +12,7 @@ function convertStringArrayToBytes32(array: string[]){
 }
 
 async function main(){
-  
+  //TODO
 }
+
+main().catch
