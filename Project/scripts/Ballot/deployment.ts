@@ -12,7 +12,7 @@ function convertStringArrayToBytes32(array: string[]){
 }
 
 async function main(){
-  const contractFactory = new ethers.ContractFactory()
+  const contractFactory = new ethers.ContractFactory(ballotJson.abi, ballotJson.bytecode)
 }
 
 main().catch((error) => {
