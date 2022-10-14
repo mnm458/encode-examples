@@ -32,7 +32,7 @@ async function main(){
     signer
   );
   const ballotContract = await ballotFactory.deploy(
-    convertStringArrayToBytes32(proposals)
+    convertStringArrayToBytes32(PROPOSALS)
   );
 }
 
