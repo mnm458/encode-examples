@@ -12,4 +12,6 @@ contract MyToken is ERC20, AccessControl {
        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
        _grantRole(MINTER_ROLE, msg.sender);
     }
+
+    function mint(address to, uint256 amount)
 }
