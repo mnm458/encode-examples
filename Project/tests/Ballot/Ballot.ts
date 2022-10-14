@@ -75,6 +75,13 @@ describe("Ballot", function () {
       await voteTx.wait();
       await expect(ballotContract.giveRightToVote(accounts[1].address)).to.be.revertedWith("The voter already voted")
     })
+
+    it("triggers the NewVoter event with the address of the new voter", async function(){
+      const voterAddress = accounts[1].address;
+      await expect(ballotContract.giveRightToVote(voterAddress))
+        .to.emit(ballotContract, "NewVoter")
+        .withArgs(accounts[1].address);
+    })
   })
 
   describe("when the voter interact with the vote function in the contract", function (){
