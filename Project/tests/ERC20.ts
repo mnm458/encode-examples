@@ -30,7 +30,7 @@ describe("Testing ERC20 Token", () => {
     });
 
     it("sets the deployer as minter", async () => {
-        const hasRole = await tokenContract.hasRole(minterRoleHash, accounts[1].address);
+        const hasRole = await tokenContract.hasRole(minterRoleHash, accounts[0].address);
     });
 
     describe("when the minter call the mint function", async () => {
