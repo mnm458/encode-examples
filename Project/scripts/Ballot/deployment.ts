@@ -15,4 +15,7 @@ async function main(){
   //TODO
 }
 
-main().catch
+main().catch((error) => {
+  console.log(error);
+  process
+})
