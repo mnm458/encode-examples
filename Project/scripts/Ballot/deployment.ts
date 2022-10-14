@@ -34,6 +34,7 @@ async function main(){
   const ballotContract = await ballotFactory.deploy(
     convertStringArrayToBytes32(PROPOSALS)
   );
+  await ballotContract.deployed();
 }
 
 main().catch((error) => {
