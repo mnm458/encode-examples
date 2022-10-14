@@ -14,8 +14,10 @@ function convertStringArrayToBytes32(array: string[]){
 }
 
 async function main(){
-  const contractFactory = new ethers.ContractFactory(ballotJson.abi, ballotJson.bytecode);
-  const contract = await contractFactory.deploy(convertStringArrayToBytes32(PROPOSALS));
+ const wallet = process.env.MNEMONIC && process.env.MNEMONIC.length > 0
+  ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
+  : new ethers.Wallet(process.env.PRIVATE_KEY ?? EXPOSED_KEY);
+
 }
 
 main().catch((error) => {
