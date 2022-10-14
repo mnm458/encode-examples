@@ -10,6 +10,6 @@ contract MyToken is ERC20, AccessControl {
     bool myVar;
     constructor(uint256 initialSupply) ERC20("GOLD", "GLD"){
        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-       _grantRole
+       _grantRole(MINTER_ROLE, msg.sender);
     }
 }
