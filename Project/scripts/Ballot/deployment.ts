@@ -23,7 +23,7 @@ async function main(){
 
   const signer = wallet.connect(provider);
   const balanceBN = await signer.getBalance();
-  const balance = Number(ethers.utils.parseEther(balanceBN));
+  const balance = Number(ethers.utils.formatEther(balanceBN));
   console.log(`Wallet balance: ${balance}`);
 }
 
