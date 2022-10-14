@@ -79,6 +79,9 @@ describe("Ballot", function () {
 
   describe("when the voter interact with the vote function in the contract", function (){
     //TODO
+    it("is not emplemented", async function(){
+      
+    })
   })
 
 });
